@@ -1,4 +1,5 @@
-﻿// Liczby całkowite
+﻿/*
+// Liczby całkowite
 int maxIntValue = int.MaxValue;
 int minIntValue = int.MinValue;
 uint maxUintValue = uint.MaxValue;
@@ -39,18 +40,18 @@ else {
 }
 
 // Operatory relacyjne i logiczne
-/*
-== - równość
-!= - niewrówność
-< - mniejsze
-> - większe
-<= - mniejsze równe
->= - większe równe
 
-&& - logiczne AND
-|| - logiczne OR
-! - negacja
- */
+// == - równość
+// != - niewrówność
+// < - mniejsze
+// > - większe
+// <= - mniejsze równe
+// >= - większe równe
+
+// && - logiczne AND
+// || - logiczne OR
+// ! - negacja
+ 
 
 //Zadanie domowe
 string imie = "Robert";
@@ -67,4 +68,48 @@ else if (plec == 'm' && wiek < 18) {
 }
 else {
 
+}
+*/
+// Tablice
+
+int[] grades = new int[1];
+//string[] daysOfWeek = new string[7];
+string[] monthNames = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec"};
+
+// Pętla for
+
+for (int i = 0; i < monthNames.Length; i++) {
+}
+
+// Listy
+
+
+List<string> daysOfWeek = new List<string>();
+daysOfWeek.Add("Poniedziałek");
+daysOfWeek.Add("Wtorek");
+daysOfWeek.Add("Środa");
+daysOfWeek.Add("Czwartek");
+daysOfWeek.Add("Piątek");
+daysOfWeek.Add("Sobota");
+daysOfWeek.Add("Niedziela");
+
+// Pętla foreach
+
+foreach (var day in daysOfWeek) {
+    Console.WriteLine(day);
+}
+
+
+// Zadanie dpmowe dzień 5
+
+long number = 123444567891;
+int[] numbers = new int[10];
+string numberInString = number.ToString();
+char[] letters = numberInString.ToCharArray();
+foreach (var letter in letters) {
+    int num = letter;
+    numbers[num - 48]++;
+}
+for (int i = 0; i < numbers.Length; i++) {
+    Console.WriteLine(i + " => " + numbers[i]);
 }
