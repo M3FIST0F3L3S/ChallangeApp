@@ -1,4 +1,4 @@
-﻿/*
+﻿
 // Liczby całkowite
 int maxIntValue = int.MaxValue;
 int minIntValue = int.MinValue;
@@ -53,7 +53,8 @@ else {
 // ! - negacja
  
 
-//Zadanie domowe
+// Zadanie domowe dzień 4
+
 string imie = "Robert";
 char plec = 'm';
 int wiek = 24;
@@ -69,7 +70,7 @@ else if (plec == 'm' && wiek < 18) {
 else {
 
 }
-*/
+
 // Tablice
 
 int[] grades = new int[1];
@@ -107,9 +108,16 @@ int[] numbers = new int[10];
 string numberInString = number.ToString();
 char[] letters = numberInString.ToCharArray();
 foreach (var letter in letters) {
-    int num = letter;
-    numbers[num - 48]++;
+    numbers[int.Parse(letter.ToString())]++;
 }
 for (int i = 0; i < numbers.Length; i++) {
     Console.WriteLine(i + " => " + numbers[i]);
 }
+
+
+
+
+
+
+
+
