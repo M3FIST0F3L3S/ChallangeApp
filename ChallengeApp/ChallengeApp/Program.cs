@@ -1,4 +1,5 @@
-﻿
+﻿using ChallengeApp;
+using System.Collections.Generic;
 // Liczby całkowite
 int maxIntValue = int.MaxValue;
 int minIntValue = int.MinValue;
@@ -51,13 +52,13 @@ else {
 // && - logiczne AND
 // || - logiczne OR
 // ! - negacja
- 
+
 
 // Zadanie domowe dzień 4
 
-string imie = "Robert";
-char plec = 'm';
-int wiek = 24;
+string imie = "Ewa";
+char plec = 'k';
+int wiek = 22;
 if (plec == 'k' && wiek < 30) {
     Console.WriteLine("Kobieta poniżej 30 lat");
 }
@@ -75,7 +76,7 @@ else {
 
 int[] grades = new int[1];
 //string[] daysOfWeek = new string[7];
-string[] monthNames = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec"};
+string[] monthNames = { "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec" };
 
 // Pętla for
 
@@ -95,11 +96,11 @@ daysOfWeek.Add("Sobota");
 daysOfWeek.Add("Niedziela");
 
 // Pętla foreach
-
+/*
 foreach (var day in daysOfWeek) {
     Console.WriteLine(day);
 }
-
+*/
 
 // Zadanie dpmowe dzień 5
 
@@ -114,8 +115,60 @@ for (int i = 0; i < numbers.Length; i++) {
     Console.WriteLine(i + " => " + numbers[i]);
 }
 
+// Klasa
+
+User user1 = new User("Robert", "12345");
+
+class User {
+    public static string GameName = "Diablo";
+    private List<int> score = new List<int>();
+    public User(string login, string password) {
+        this.Login = login;
+        this.Password = password;
+    }
+    public string Login { get; private set; }
+    public string Password { get; private set; }
+    public int Result { get { return this.score.Sum(); } }
+    public void AddScore(int score) {
+        this.score.Add(score);
+    }
+}
+
+// Zadanie domowe dzień 6
+List<Employee> Employees = new List<Employee>();
+
+Employees.Add(new("Robert", "Zaremba", 25));
+Employees.Add(new("Jakub", "Siwa", 25));
+Employees.Add(new("Emilia", "Konewa", 25));
+
+Employees[0].AddScore(7);
+Employees[0].AddScore(1);
+Employees[0].AddScore(8);
+Employees[0].AddScore(4);
+Employees[0].AddScore(6);
+
+Employees[1].AddScore(4);
+Employees[1].AddScore(5);
+Employees[1].AddScore(3);
+Employees[1].AddScore(3);
+Employees[1].AddScore(6);
+
+Employees[2].AddScore(6);
+Employees[2].AddScore(2);
+Employees[2].AddScore(2);
+Employees[2].AddScore(7);
+Employees[2].AddScore(5);
 
 
+
+Employee bestEmloyee = Employees[0];
+foreach (var employee in Employees) {
+    if (employee.Result > bestEmloyee.Result) {
+        bestEmloyee = employee;
+    }
+}
+
+Console.WriteLine(bestEmloyee.Name + " " + bestEmloyee.Surname + " " + bestEmloyee.Age + "lat. Wynik: " + bestEmloyee.Result);
 
 
 
